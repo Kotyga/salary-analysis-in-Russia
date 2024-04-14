@@ -20,4 +20,4 @@ WORKDIR /app
 EXPOSE 8501
 
 # Запускаем приложение Streamlit
-CMD ["streamlit", "run", "home.py"]
+CMD ["streamlit", "run", "web/home.py"]
