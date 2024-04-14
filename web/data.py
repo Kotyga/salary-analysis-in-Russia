@@ -4,16 +4,16 @@ import psycopg2
 import pandas as pd
 import streamlit as st
 
-
+PORT=5432
 @st.cache_data
 def load_data(env_path, sql_txt):
     load_dotenv(env_path)
     conn = psycopg2.connect(
-        dbname=os.getenv("DATABASE_NAME"),
-        user=os.getenv("USER"),
-        password=os.getenv("PASSWORD"),
-        host=os.getenv("HOST"),
-        port=os.getenv("PORT")
+        dbname='salary-project-db',
+        user='guest',
+        password='BnC0ojgWq6JT',
+        host='ep-floral-hall-a2pqbcyz.eu-central-1.aws.neon.tech',
+        port=5432
     )
     cur = conn.cursor()
     cur.execute(sql_txt)
