@@ -1,4 +1,4 @@
-from dotenv import load_dotenv
+# from dotenv import load_dotenv
 import os
 import psycopg2
 import pandas as pd
@@ -6,8 +6,7 @@ import streamlit as st
 
 PORT=5432
 @st.cache_data
-def load_data(env_path, sql_txt):
-    load_dotenv(env_path)
+def load_data(sql_txt):
     conn = psycopg2.connect(
         dbname='salary-project-db',
         user='guest',

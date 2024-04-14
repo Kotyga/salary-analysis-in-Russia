@@ -1,14 +1,13 @@
 import streamlit as st
 from data import load_data, inflation
 
-path = '\web\.env'
 query0 = 'SELECT * FROM data.inflation_data_0'
 query1 = '''select name, s.year, mean_salary, total
 from data.salary s
 inner join data.ref_salary rs on rs.id = s.economic_id
 inner join data.inflation_data_0 id0 on id0.year = s.year'''
-df = load_data(path, query0)
-df1 = load_data(path, query1)
+df = load_data(query0)
+df1 = load_data(query1)
 st.title('''Таблица уровня инфляции по месяцам в годовом исчислении''')
 st.write('''Коэффициент инфляции в годовом исчислении,
          представленный в таблице ниже, рассчитывается как сумма коэффициентов инфляции 
