@@ -5,6 +5,7 @@ query = '''select name, year, mean_salary
 from data.salary s
 inner join data.ref_salary rs on rs.id = s.economic_id'''
 df = load_data(query)
+st.title('''Таблица зарплат по отраслям с 2000г.''')
 st.dataframe(df)
 st.markdown('[Source](https://rosstat.gov.ru/labor_market_employment_salaries)')
 
